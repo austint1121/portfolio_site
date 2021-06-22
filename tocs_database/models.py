@@ -50,17 +50,17 @@ class Enemy(models.Model):
 
     #Unbalance Efficacy
     efficacy = (
-        ('1/5', 1),
-        ('2/5', 2),
-        ('3/5', 3),
-        ('4/5', 4),
-        ('5/5', 5),
+        ('1/5', '1'),
+        ('2/5', '2'),
+        ('3/5', '3'),
+        ('4/5', '4'),
+        ('5/5', '5'),
     )
 
-    slash = models.IntegerField(choices=efficacy, default=1)
-    thrust = models.IntegerField(choices=efficacy, default=1)
-    pierce = models.IntegerField(choices=efficacy, default=1)
-    strike = models.IntegerField(choices=efficacy, default=1)
+    slash = models.CharField(choices=efficacy, default='1', max_length=10)
+    thrust = models.CharField(choices=efficacy, default='1', max_length=10)
+    pierce = models.CharField(choices=efficacy, default='1', max_length=10)
+    strike = models.CharField(choices=efficacy, default='1', max_length=10)
 
     #status_efficacy
     poison_efficacy = models.IntegerField(default=100)
@@ -110,6 +110,8 @@ class ItemDrop(models.Model):
     """Model for Item drops"""
     name = models.CharField(max_length=50, help_text='Name of item')
     drop_chance = models.FloatField(help_text='Enter drop chance as decimal')
+    def __str__(self):
+        return self.name
 
 # class UnbalanceEfficacy(models.Model):
 #     """Model for a monster's unbalance chance"""
@@ -146,5 +148,12 @@ class ItemDrop(models.Model):
 
 class Skill(models.Model):
     """Arts / skills for enemies"""
-    name = models.TextField(max_length=50)
-    desc = models.TextField(max_length=50, help_text='Description of art or ability')
+    name = models.CharField(max_length=50)
+    ability_type_choices = (
+        ('Art', 'A'),
+        ('Craft', 'C'),
+    )
+    ability_type = models.CharField(choices=ability_type_choices, max_length=20)
+    desc = models.TextField(max_length=100, help_text='Description of art or ability')
+    def __str__(self):
+        return self.name
