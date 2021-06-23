@@ -11,28 +11,48 @@
 {% block content %}
     <div class="viewport">
         {% include 'header.html' %}
-
         <div class="users-container">
-            <table class="users-table">
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Level</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for monster in enemy %}
-                    <tr>
-                        <td class="user-name"><span>{{ monster.name }}</span></td>
-                        <td class="user-title"><span>{{ monster.location }}</span></td>
-                        <td class="user-location"><span>{{ monster.level }}</span></td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+            {% for places in location %}
+                <button type="button" class="collapsible">{{ places.name }}</button>
+                <div class="content">
+                    <table class="users-table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Level</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for monster in enemy %}
+                        {% if places.name == monster.location.name %}
+                        <tr>
+                            <td class="user-name"><span>{{ monster.name }}</span></td>
+                            <td class="user-title"><span>{{ monster.location }}</span></td>
+                            <td class="user-location"><span>{{ monster.level }}</span></td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endfor %}
         </div>
-
-
     </div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
 {% endblock %}
