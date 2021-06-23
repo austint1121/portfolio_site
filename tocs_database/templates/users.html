@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/users.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/get.css' %}" type="text/css" />
+{% endblock %}
+
+
+{% block content %}
+    <div class="viewport">
+        {% include 'header.html' %}
+
+        <div class="users-container">
+            <table class="users-table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Level</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for monster in enemy %}
+                    <tr>
+                        <td class="user-name"><span>{{ monster.name }}</span></td>
+                        <td class="user-title"><span>{{ monster.location }}</span></td>
+                        <td class="user-location"><span>{{ monster.level }}</span></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+{% endblock %}
