@@ -99,3 +99,9 @@ i {
     margin-top: 20px;
     display: block;
 }
+
+.article-table-sub-header {
+font-family: proxima-nova, sans-serif;
+padding: 20px 15px;
+border-bottom: 1px solid #e6e6e6;
+}

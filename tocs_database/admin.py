@@ -19,7 +19,7 @@ class ItemInline(admin.TabularInline):
 class EnemyAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
-            'fields': ('name', 'location')
+            'fields': ('name', 'location', 'profile_pic', 'bio')
         }),
         ('Stats', {
             'fields': [('level', 'HP', 'EXP'), ('STR', 'DEF', 'ATS', 'ADF', 'SPD')]
