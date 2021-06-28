@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% load static %}
-
+<!--TODO: Rename classes/files-->
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/profile.css' %}" type="text/css" />
@@ -12,6 +12,7 @@
         {{ enemy.location.name }}
         <div class="container">
             <div class="account-header">
+<!--                TODO: Correct avatar placement/dimensions-->
                 <img class="user-avatar" style="height: 150px; width: 150px;" src="https://***REMOVED***.s3.amazonaws.com/static/images{{enemy.profile_pic.url}}" alt="profile">
                 <div class="account-details">
                     <h2 class="username">{{ enemy.name }}</h2>
@@ -47,6 +48,7 @@
                     <table>
                         <tbody>
                         <tr><td colspan="4" class="article-table-sub-header"><h3>Unbalance Efficacy</h3></td></tr>
+<!--                            TODO: Change 'Unbalance Efficacy' to be whole numbers instead of fractions-->
                             <tr><td colspan="2" style="white-space:nowrap; padding-top:3px"><span class="icon" title="Slash Type"><img alt="Slash_attack_type.png" src="{% static 'images/Slash_Attack_Type.png' %}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: middle;"></span><span style="display:inline-block;width:3ch;text-align:right">{{ enemy.slash }}</span></td></tr>
                             <tr><td colspan="2" style="white-space:nowrap; padding-top:3px"><span class="icon" title="Thrust Type"><img alt="Thrust_attack_type.png" src="{% static 'images/Thrust_Attack_Type.png' %}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: middle;"></span><span style="display:inline-block;width:3ch;text-align:right">{{ enemy.thrust }}</span></td></tr>
                             <tr><td colspan="2" style="white-space:nowrap; padding-top:3px"><span class="icon" title="Pierce Type"><img alt="Pierce_attack_type.png" src="{% static 'images/Pierce_Attack_Type.png' %}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: middle;"></span><span style="display:inline-block;width:3ch;text-align:right">{{ enemy.pierce }}</span></td></tr>
@@ -123,6 +125,7 @@
                                     <td colspan="2" style="white-space:nowrap; padding-right: 10px;padding-left: 10px;"><span class="icon" title="Time Sepith"><img alt="Time Sepith" src="{% static 'images/Time_Sepith.png' %}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: text-top;"></span><span style="display:inline-block;width:2ch;text-align:right">{{ enemy.time_sepith }}</span></td>
                                     <td colspan="2" style="white-space:nowrap; padding-right: 10px;padding-left: 10px;"><span class="icon" title="Space Sepith"><img alt="Space Sepith" src="{% static 'images/Space_Sepith.png' %}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: text-top;"></span><span style="display:inline-block;width:2ch;text-align:right">{{ enemy.space_sepith }}</span></td>
                                     <td colspan="2" style="white-space:nowrap; padding-right: 10px;padding-left: 10px;"><span class="icon" title="Mirage Sepith"><img alt="Mirage Sepith" src="{% static 'images/Mirage_Sepith.png' %}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: text-top;"></span><span style="display:inline-block;width:2ch;text-align:right">{{ enemy.mirage_sepith }}</span></td>
+<!--                                    TODO: Change Sepith Mass image from current placeholder image-->
                                     <td colspan="2" style="white-space:nowrap; padding-right: 10px;padding-left: 10px;"><span class="icon" title="Mass Sepith"><img alt="Mass Sepith" src="{% static 'images/Mirage_Sepith.png' %}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: text-top;"></span><span style="display:inline-block;width:2ch;text-align:right">{{ enemy.mass_sepith }}</span></td>
 
                             </tr>
