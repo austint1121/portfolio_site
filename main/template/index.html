@@ -4,8 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 {% load static %}
 	<head>
 		<title>Matthew Turner's Portfolio</title>
@@ -13,8 +12,42 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href=" {% static 'assets/css/main.css' %} " />
 		<noscript><link rel="stylesheet" href=" {% static 'assets/css/noscript.css' %} " /></noscript>
+		<style>
+			.banner {
+			  background: #009579;
+			}
+
+			.banner__content {
+			  padding: 16px;
+			  max-width: 800px;
+			  margin: 0 auto;
+			  display: flex;
+			  align-items: center;
+			}
+
+			.banner__text {
+			  flex-grow: 1;
+			  line-height: 1.4;
+			  font-family: "Quicksand", sans-serif;
+			}
+
+			.banner__close {
+			  background: none;
+			  border: none;
+			  cursor: pointer;
+			}
+
+			.banner__text,
+			.banner__close > span {
+			  color: #ffffff;
+			}
+		</style>
+
+
 	</head>
 	<body class="is-preload">
+	{% block content %}
+	{% endblock %}
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -49,22 +82,16 @@
 						<div class="inner">
 							<header>
 								<h1>Welcome to Matthew Turner's Portfolio.</h1><br />
-<!--								TODO: Change to actual subheader-->
-								<h3>Website currently under construction.</h3>
-								<p>Projects:</p>
+								<h3>Projects</h3>
+								<p>All projects below were made by <a href="/about_me">me</a> using the Python coding language.</p>
 							</header>
 							<section class="tiles">
 								<article class="style1">
-<!--									TODO: Remove cross from image-->
 									<span class="image">
 										<img src=" {% static 'images/pic01.jpg' %} " alt="" />
 									</span>
 									<a href="/tocs">
 										<h2>Trails of Cold Steel Enemy Database</h2>
-										<div class="content">
-											<!--TODO: Change/delete subheader.-->
-											<p>Coming soon</p>
-										</div>
 									</a>
 								</article>
 								<article class="style2">
@@ -130,23 +157,23 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-<!--								TODO: Add form functionality-->
 								<h2>Get in touch</h2>
-								<form method="post" action="#">
+								<form method="post" action="">
+									{% csrf_token %}
 									<div class="fields">
 										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
+											{{ form.name }}
 										</div>
 										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
+											{{ form.email }}
 										</div>
 										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
+											{{ form.message }}
 										</div>
 									</div>
-<!--									<ul class="actions">-->
-<!--										<li><input type="submit" value="Send" class="primary" /></li>-->
-<!--									</ul>-->
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
 								</form>
 							</section>
 							<section>
@@ -169,6 +196,11 @@
 			</div>
 
 		<!-- Scripts -->
+			<script>
+			document.querySelector(".banner__close").addEventListener("click", function () {
+			  this.closest(".banner").style.display = "none";
+			});
+			</script>
 			<script src=" {% static 'assets/js/jquery.min.js' %} "></script>
 			<script src=" {% static 'assets/js/browser.min.js' %} "></script>
 			<script src=" {% static 'assets/js/breakpoints.min.js' %} "></script>
