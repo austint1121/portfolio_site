@@ -46,8 +46,6 @@
 
 	</head>
 	<body class="is-preload">
-	{% block content %}
-	{% endblock %}
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -72,8 +70,7 @@
 <!--							TODO: Create 'About me' Page-->
 							<li><a href="">Projects</a></li>
 <!--							TODO: Create 'Projects' Page-->
-							<li><a href="">Contact</a></li>
-<!--							TODO: Create 'Contact' Page-->
+							<li><a href="#getintouch">Contact</a></li>
 						</ul>
 					</nav>
 
@@ -157,7 +154,7 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Get in touch</h2>
+								<a id="getintouch"><h2>Get in touch</h2></a>
 								<form method="post" action="">
 									{% csrf_token %}
 									<div class="fields">
@@ -180,7 +177,7 @@
 								<h2>Follow</h2>
 <!--								TODO: Fill out section, also, figure out what happened to the icons-->
 								<ul class="icons">
-									<li><a href="" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
 									<li><a href="" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
 									<li><a href="" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
 									<li><a href="" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
