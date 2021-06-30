@@ -65,12 +65,11 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="">Home</a></li>
-							<li><a href="">About Me</a></li>
-<!--							TODO: Create 'About me' Page-->
-							<li><a href="">Projects</a></li>
+							<li><a href="/index">Home</a></li>
+							<li><a href="about_me">About Me</a></li>
+							<li><a href="/projects">Projects</a></li>
 <!--							TODO: Create 'Projects' Page-->
-							<li><a href="#getintouch">Contact</a></li>
+							<li><a href="/index#getintouch">Contact</a></li>
 						</ul>
 					</nav>
 
@@ -80,7 +79,7 @@
 							<header>
 								<h1>Welcome to Matthew Turner's Portfolio.</h1><br />
 								<h3>Projects</h3>
-								<p>All projects below were made by <a href="/about_me">me</a> using the Python coding language.</p>
+								<p>All projects below were made by <a href="about_me">me</a> using the Python coding language.</p>
 							</header>
 							<section class="tiles">
 								<article class="style1">
@@ -175,12 +174,11 @@
 							</section>
 							<section>
 								<h2>Follow</h2>
-<!--								TODO: Fill out section, also, figure out what happened to the icons-->
 								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									<li><span class="label"><a href="https://twitter.com/Pancakes_Why"><img alt="Twitter Icon" src="{% static 'images/twitter-brands.svg' %}" width="50" height="50"></a></span></li>
+									<li><span class="label"><a href="https://github.com/austint1121"><img alt="Github Icon" src="{% static 'images/github-brands.svg' %}" width="50" height="50"></a></span></li>
+<!--									TODO: Link email icon to contact page-->
+									<li><span class="label"><a href="/index#getintouch"><img alt="Email Icon" src="{% static 'images/envelope-solid.svg' %}" width="50" height="50"></a></span></li>
 								</ul>
 							</section>
 							<ul class="copyright">

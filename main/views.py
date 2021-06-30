@@ -33,3 +33,6 @@ def email_success(request):
         'form':form
     }
     return render(request, 'email_sent.html', context)
+
+def about_me(request):
+    return render(request, 'generic.html')
