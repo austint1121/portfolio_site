@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 {% load static %}
 	<head>
 		<title>Matthew Turner's Portfolio</title>
@@ -12,64 +12,29 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href=" {% static 'assets/css/main.css' %} " />
 		<noscript><link rel="stylesheet" href=" {% static 'assets/css/noscript.css' %} " /></noscript>
-		<style>
-			.banner {
-			  background: #009579;
-			}
-
-			.banner__content {
-			  padding: 16px;
-			  max-width: 800px;
-			  margin: 0 auto;
-			  display: flex;
-			  align-items: center;
-			}
-
-			.banner__text {
-			  flex-grow: 1;
-			  line-height: 1.4;
-			  font-family: "Quicksand", sans-serif;
-			}
-
-			.banner__close {
-			  background: none;
-			  border: none;
-			  cursor: pointer;
-			}
-
-			.banner__text,
-			.banner__close > span {
-			  color: #ffffff;
-			}
-		</style>
-
-
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
 							<!-- Nav -->
 								<nav>
 									<ul>
-									<li><a href="#menu">Menu</a></li>
+										<li><a href="#menu">Menu</a></li>
 									</ul>
 								</nav>
+
 						</div>
 					</header>
-
 				<!-- Menu -->
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="/index">Home</a></li>
-							<li><a href="about_me">About Me</a></li>
-<!--							TODO: Create 'Projects' Page-->
+							<li><a href="">About Me</a></li>
 							<li><a href="/projects">Projects</a></li>
-<!--							TODO: Create Contact Page-->
 							<li><a href="/index#getintouch">Contact</a></li>
 						</ul>
 					</nav>
@@ -77,76 +42,12 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<header>
-								<h1>Welcome to Matthew Turner's Portfolio.</h1><br />
-								<h3>Projects</h3>
-								<p>All projects below were made by <a href="about_me">me</a> using the Python coding language.</p>
-							</header>
-							<section class="tiles">
-								<article class="style1">
-									<span class="image">
-										<img src=" {% static 'images/pic01.jpg' %} " alt="" />
-									</span>
-									<a href="/tocs">
-										<h2>Trails of Cold Steel Enemy Database</h2>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src=" {% static 'images/pic02.jpg' %} " alt="" />
-									</span>
-									<a href="">
-										<h2>N/A</h2>
-										<div class="content">
-											<p></p>
-										</div>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src=" {% static 'images/pic03.jpg' %} " alt="" />
-									</span>
-									<a href="">
-										<h2>N/A</h2>
-										<div class="content">
-											<p></p>
-										</div>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src=" {% static 'images/pic04.jpg' %} " alt="" />
-									</span>
-									<a href="">
-										<h2>N/A</h2>
-										<div class="content">
-											<p></p>
-										</div>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img src=" {% static 'images/pic05.jpg' %} " alt="" />
-									</span>
-									<a href="">
-										<h2>N/A</h2>
-										<div class="content">
-											<p></p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img src=" {% static 'images/pic06.jpg' %} " alt="" />
-									</span>
-									<a href="">
-										<h2>N/A</h2>
-										<div class="content">
-											<p></p>
-										</div>
-									</a>
-								</article>
-							</section>
+							<h1>About Me</h1>
+							<img style="padding: 10px;" align="right" width="375" height="402" src=" {% static 'images/IMG_7730_border.jpg' %} " alt="" />
+							<p>Hello! My name is Matthew Turner, I'm a 24-year-old self-taught Python programmer, and I created the site you are currently on! I designed this site, and the projects within, as a way to practice my Python coding abilities.</p>
+							<p>My journey began in June of 2019 when I took a job working at Regeneron Pharmaceutical’s Global Security Operations Command Center as a Security Analyst. After working for a few months, I noticed that there were a few responsibilities assigned to me that had the potential to be automated. At this point in my life, the only coding experience I had was some limited experience in Java from high school. After some recommendations from friends, and looking around on the internet, I decided to try installing Python and started teaching myself the language.</p>
+							<p>For the next 2 years I continued to teach myself Python. I wrote basics scripts that automated some of my repetitive responsibilities, and this opened up time for me to work on more important projects and responsibilities. Over time this brought recognition from my superiors, who asked if I could assist in managing the Security database and other Access Control related tasks using the scripts I was writing. For the rest of my time with Regeneron I assisted in their Access Control operations using the Python abilities I had taught myself. I even had a chance to pitch a project to the Director and manager of Security; I created a script that would take all Regeneron Employee Travelers flight numbers for the day and input and display it on a flight tracking program called <a href="https://flightaware.com/"> FlightAware</a>. FlightAware would then display any flights currently in the air with Regeneron travelers. The program was so well liked by the Director and Manager that they even put down money to pay for a premium FlightAware account.</p>
+							<p>Moving forward, I'm hoping to one day become a Software Developer or Data Scientist. I'm continuing to teach myself Python, which has ignited my passion for coding. Please feel free to look around the site and see the results of my efforts. If you would like to ask any questions, or just want to reach out, feel free to fill out a <a href="/index#getintouch">contact form.</a></p>
 						</div>
 					</div>
 
@@ -178,7 +79,6 @@
 								<ul class="icons">
 									<li><span class="label"><a href="https://twitter.com/Pancakes_Why"><img alt="Twitter Icon" src="{% static 'images/twitter-brands.svg' %}" width="50" height="50"></a></span></li>
 									<li><span class="label"><a href="https://github.com/austint1121"><img alt="Github Icon" src="{% static 'images/github-brands.svg' %}" width="50" height="50"></a></span></li>
-<!--									TODO: Link email icon to contact page-->
 									<li><span class="label"><a href="/index#getintouch"><img alt="Email Icon" src="{% static 'images/envelope-solid.svg' %}" width="50" height="50"></a></span></li>
 								</ul>
 							</section>
@@ -200,11 +100,6 @@
 			</div>
 
 		<!-- Scripts -->
-			<script>
-			document.querySelector(".banner__close").addEventListener("click", function () {
-			  this.closest(".banner").style.display = "none";
-			});
-			</script>
 			<script src=" {% static 'assets/js/jquery.min.js' %} "></script>
 			<script src=" {% static 'assets/js/browser.min.js' %} "></script>
 			<script src=" {% static 'assets/js/breakpoints.min.js' %} "></script>

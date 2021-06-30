@@ -5,7 +5,6 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-<!--TODO: Do this page.-->
 {% load static %}
 	<head>
 		<title>Matthew Turner's Portfolio</title>
@@ -21,19 +20,12 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
-
-							<!-- Logo -->
-								<a href=" {% static 'index.html' %} " class="logo">
-									<span class="symbol"><img src=" {% static 'images/logo.svg' %} " alt="" /></span><span class="title">Phantom</span>
-								</a>
-
 							<!-- Nav -->
 								<nav>
 									<ul>
-										<li><a href=" {% static '#menu' %} ">Menu</a></li>
+									<li><a href="#menu">Menu</a></li>
 									</ul>
 								</nav>
-
 						</div>
 					</header>
 
@@ -41,14 +33,14 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href=" {% static 'index.html' %} ">Home</a></li>
-							<li><a href=" {% static 'generic.html' %} ">Ipsum veroeros</a></li>
-							<li><a href=" {% static 'generic.html' %} ">Tempus etiam</a></li>
-							<li><a href=" {% static 'generic.html' %} ">Consequat dolor</a></li>
-							<li><a href=" {% static 'elements.html' %} ">Elements</a></li>
+							<li><a href="/index">Home</a></li>
+							<li><a href="about_me">About Me</a></li>
+<!--							TODO: Create 'Projects' Page-->
+							<li><a href="/projects">Projects</a></li>
+<!--							TODO: Create Contact Page-->
+							<li><a href="/index#getintouch">Contact</a></li>
 						</ul>
 					</nav>
-
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
@@ -64,17 +56,18 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
+								<a id="getintouch"><h2>Get in touch</h2></a>
+								<form method="post" action="">
+									{% csrf_token %}
 									<div class="fields">
 										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
+											{{ form.name }}
 										</div>
 										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
+											{{ form.email }}
 										</div>
 										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
+											{{ form.message }}
 										</div>
 									</div>
 									<ul class="actions">

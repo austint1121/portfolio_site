@@ -35,4 +35,8 @@ def email_success(request):
     return render(request, 'email_sent.html', context)
 
 def about_me(request):
-    return render(request, 'generic.html')
+    form = ContactForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'about_me.html', context)
