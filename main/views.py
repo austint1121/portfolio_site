@@ -20,12 +20,13 @@ def emailform(request):
         email_from = settings.EMAIL_HOST_USER
         recipient_list = ['austin.turner1121@gmail.com']
         send_mail(subject, message, email_from, recipient_list)
-        return redirect('/index/success/')
+
 
 def index(request):
     """View for the Index of the site."""
     if request.method =='POST':
        emailform(request)
+       return redirect('/index/success/')
     form = ContactForm()
     context = {
         'form':form
@@ -44,6 +45,7 @@ def about_me(request):
     """View for About me page"""
     if request.method =='POST':
         emailform(request)
+        return redirect('/index/success/')
     form = ContactForm()
     context = {
         'form':form
@@ -54,6 +56,7 @@ def contact(request):
     """View for the Contact page."""
     if request.method =='POST':
         emailform(request)
+        return redirect('/index/success/')
     form = ContactForm()
     context = {
         'form':form
@@ -64,6 +67,7 @@ def projects(request):
     """View for the Projects page."""
     if request.method =='POST':
         emailform(request)
+        return redirect('/index/success/')
     form = ContactForm()
     context = {
         'form':form
