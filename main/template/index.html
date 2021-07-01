@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/html">
 {% load static %}
 	<head>
-		<title>Matthew Turner's Portfolio</title>
+		{% block title %}<title>Matthew Turner's Portfolio</title>{% endblock %}
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href=" {% static 'assets/css/main.css' %} " />
@@ -67,7 +67,6 @@
 						<ul>
 							<li><a href="/index">Home</a></li>
 							<li><a href="/index/about_me">About Me</a></li>
-<!--							TODO: Create Projects page.-->
 							<li><a href="/index/projects">Projects</a></li>
 							<li><a href="/index/contact">Contact</a></li>
 						</ul>
@@ -77,11 +76,14 @@
 					<div id="main">
 						<div class="inner">
 							<header>
+								{% block header %}
 								<h1>Welcome to Matthew Turner's Portfolio.</h1><br />
 								<h3>Projects</h3>
 								<p>All projects below were made by <a href="about_me">me</a> using the Python coding language.</p>
+								{% endblock %}
 							</header>
 							<section class="tiles">
+								{% block titles %}
 								<article class="style1">
 									<span class="image">
 										<img width="353" height="330" src=" {% static 'images/cs1.jpg' %} " alt="" />
@@ -92,11 +94,10 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img src=" {% static 'images/pic02.jpg' %} " alt="" />
+										<img src=" {% static 'images/pic02_flightaware.jpg' %} " alt="" />
 									</span>
-									<a href="">
-<!--										TODO: Change 'N/A' to "Coming soon"-->
-										<h2>Coming Soon</h2>
+									<a href="/index/projects">
+										<h2>FlightAware Input Script</h2>
 										<div class="content">
 											<p></p>
 										</div>
@@ -106,7 +107,7 @@
 									<span class="image">
 										<img src=" {% static 'images/pic03.jpg' %} " alt="" />
 									</span>
-									<a href="">
+									<a href="/index/projects">
 										<h2>Coming Soon</h2>
 										<div class="content">
 											<p></p>
@@ -117,7 +118,7 @@
 									<span class="image">
 										<img src=" {% static 'images/pic04.jpg' %} " alt="" />
 									</span>
-									<a href="">
+									<a href="/index/projects">
 										<h2>Coming Soon</h2>
 										<div class="content">
 											<p></p>
@@ -128,7 +129,7 @@
 									<span class="image">
 										<img src=" {% static 'images/pic05.jpg' %} " alt="" />
 									</span>
-									<a href="">
+									<a href="/index/projects">
 										<h2>Coming Soon</h2>
 										<div class="content">
 											<p></p>
@@ -139,7 +140,7 @@
 									<span class="image">
 										<img src=" {% static 'images/pic06.jpg' %} " alt="" />
 									</span>
-									<a href="">
+									<a href="/index/projects">
 										<h2>Coming Soon</h2>
 										<div class="content">
 											<p></p>
@@ -147,6 +148,7 @@
 									</a>
 								</article>
 							</section>
+							{% endblock %}
 						</div>
 					</div>
 
