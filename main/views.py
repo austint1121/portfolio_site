@@ -35,8 +35,39 @@ def email_success(request):
     return render(request, 'email_sent.html', context)
 
 def about_me(request):
-    form = ContactForm()
+    if request.method =='POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            user_name = form.cleaned_data['name']
+            user_email = form.cleaned_data['email']
+            user_message = form.cleaned_data['message']
+            subject = f"Message from '{user_name}' via mturner.me Contact Form"
+            message = user_message + f'\n\nReply email is {user_email}'
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = ['austin.turner1121@gmail.com']
+            send_mail(subject, message, email_from, recipient_list)
+            return email_success(request)
+    else: form = ContactForm()
     context = {
-        'form': form
+        'form':form
     }
     return render(request, 'about_me.html', context)
+
+def contact(request):
+    if request.method =='POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            user_name = form.cleaned_data['name']
+            user_email = form.cleaned_data['email']
+            user_message = form.cleaned_data['message']
+            subject = f"Message from '{user_name}' via mturner.me Contact Form"
+            message = user_message + f'\n\nReply email is {user_email}'
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = ['austin.turner1121@gmail.com']
+            send_mail(subject, message, email_from, recipient_list)
+            return email_success(request)
+    else: form = ContactForm()
+    context = {
+        'form':form
+    }
+    return render(request, 'contact.html', context)

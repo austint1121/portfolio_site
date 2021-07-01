@@ -6,106 +6,108 @@
 -->
 <html>
 {% load static %}
-	<head>
-		<title>Matthew Turner's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href=" {% static 'assets/css/main.css' %} " />
-		<noscript><link rel="stylesheet" href=" {% static 'assets/css/noscript.css' %} " /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+	<title>Matthew Turner's Portfolio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href=" {% static 'assets/css/main.css' %} " />
+	<noscript><link rel="stylesheet" href=" {% static 'assets/css/noscript.css' %} " /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
-							<!-- Nav -->
-								<nav>
-									<ul>
-									<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
+			<!-- Nav -->
+			<nav>
+				<ul>
+					<li><a href="#menu">Menu</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<!-- Menu -->
+	<nav id="menu">
+		<h2>Menu</h2>
+		<ul>
+			<li><a href="/index">Home</a></li>
+			<li><a href="/index/about_me">About Me</a></li>
+			<li><a href="/index/projects">Projects</a></li>
+			<li><a href="/index/contact">Contact</a></li>
+		</ul>
+	</nav>
+	<!-- Main -->
+	<div id="main">
+		<div class="inner">
+			{% block content %}
+			<h1>Generic Page</h1>
+			<span class="image main"><img src=" {% static 'images/pic13.jpg' %} " alt="" /></span>
+			<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
+			<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+			{% endblock %}
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			{% block footer %}
+			<section>
+				<a id="getintouch"><h2>Get in touch</h2></a>
+				<form method="post" action="">
+					{% csrf_token %}
+					<div class="fields">
+						<div class="field half">
+							{{ form.name }}
 						</div>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="/index">Home</a></li>
-							<li><a href="about_me">About Me</a></li>
-<!--							TODO: Create 'Projects' Page-->
-							<li><a href="/projects">Projects</a></li>
-<!--							TODO: Create Contact Page-->
-							<li><a href="/index#getintouch">Contact</a></li>
-						</ul>
-					</nav>
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>Generic Page</h1>
-							<span class="image main"><img src=" {% static 'images/pic13.jpg' %} " alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+						<div class="field half">
+							{{ form.email }}
+						</div>
+						<div class="field">
+							{{ form.message }}
 						</div>
 					</div>
+					<ul class="actions">
+						<li><input type="submit" value="Send" class="primary" /></li>
+					</ul>
+				</form>
+			</section>
+			<section>
+				<h2>Follow</h2>
+				<ul class="icons">
+					<li><span class="label"><a href="https://twitter.com/Pancakes_Why"><img alt="Twitter Icon" src="{% static 'images/twitter-brands.svg' %}" width="50" height="50"></a></span></li>
+					<li><span class="label"><a href="https://github.com/austint1121"><img alt="Github Icon" src="{% static 'images/github-brands.svg' %}" width="50" height="50"></a></span></li>
+					<li><span class="label"><a href="/index/contact"><img alt="Email Icon" src="{% static 'images/envelope-solid.svg' %}" width="50" height="50"></a></span></li>
+				</ul>
+			</section>
+			<ul class="copyright">
+				<div class="copyright" align="center">
+					<script>
+						document.write('&copy;' );
+						document.write(' 2021 - ');
+						document.write(new Date().getFullYear());
+						document.write(' mturner.me - All Rights Reserved.');
+						document.write('<br/>Last Updated : ');
+						document.write(document.lastModified);
+					</script>
+				</div>
+			</ul>
+			{% endblock %}
+		</div>
+	</footer>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<a id="getintouch"><h2>Get in touch</h2></a>
-								<form method="post" action="">
-									{% csrf_token %}
-									<div class="fields">
-										<div class="field half">
-											{{ form.name }}
-										</div>
-										<div class="field half">
-											{{ form.email }}
-										</div>
-										<div class="field">
-											{{ form.message }}
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><span class="label"><a href="https://twitter.com/Pancakes_Why"><img alt="Twitter Icon" src="{% static 'images/twitter-brands.svg' %}" width="50" height="50"></a></span></li>
-									<li><span class="label"><a href="https://github.com/austint1121"><img alt="Github Icon" src="{% static 'images/github-brands.svg' %}" width="50" height="50"></a></span></li>
-									<li><span class="label"><a href="/index#getintouch"><img alt="Email Icon" src="{% static 'images/envelope-solid.svg' %}" width="50" height="50"></a></span></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-									<div class="copyright" align="center">
-									  <script>
-										document.write('&copy;' );
-										document.write(' 2021 - ');
-										document.write(new Date().getFullYear());
-										document.write(' mturner.me - All Rights Reserved.');
-										document.write('<br/>Last Updated : ');
-										document.write(document.lastModified);
-									  </script>
-									</div>
-							</ul>
-						</div>
-					</footer>
+</div>
 
-			</div>
+<!-- Scripts -->
+<script src=" {% static 'assets/js/jquery.min.js' %} "></script>
+<script src=" {% static 'assets/js/browser.min.js' %} "></script>
+<script src=" {% static 'assets/js/breakpoints.min.js' %} "></script>
+<script src=" {% static 'assets/js/util.js' %} "></script>
+<script src=" {% static 'assets/js/main.js' %} "></script>
 
-		<!-- Scripts -->
-			<script src=" {% static 'assets/js/jquery.min.js' %} "></script>
-			<script src=" {% static 'assets/js/browser.min.js' %} "></script>
-			<script src=" {% static 'assets/js/breakpoints.min.js' %} "></script>
-			<script src=" {% static 'assets/js/util.js' %} "></script>
-			<script src=" {% static 'assets/js/main.js' %} "></script>
-
-	</body>
+</body>
 </html>

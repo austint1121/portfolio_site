@@ -1,0 +1,51 @@
+{% extends "generic.html" %}
+
+{% block content %}
+<section>
+  <a id="getintouch"><h2>Get in touch</h2></a>
+  <p>Thank you for visiting! Please fill out the below form with any questions or comments. I will respond to the email you leave within 48 hours.</p>
+  <form method="post" action="">
+    {% csrf_token %}
+    <div class="fields">
+      <div class="field half">
+        {{ form.name }}
+      </div>
+      <div class="field half">
+        {{ form.email }}
+      </div>
+      <div class="field">
+        {{ form.message }}
+      </div>
+    </div>
+    <ul class="actions">
+      <li><input type="submit" value="Send" class="primary" /></li>
+    </ul>
+  </form>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+<section>
+  {% load static %}
+  <h2>Follow</h2>
+  <ul class="icons">
+    <li><span class="label"><a href="https://twitter.com/Pancakes_Why"><img alt="Twitter Icon" src="{% static 'images/twitter-brands.svg' %}" width="50" height="50"></a></span></li>
+    <li><span class="label"><a href="https://github.com/austint1121"><img alt="Github Icon" src="{% static 'images/github-brands.svg' %}" width="50" height="50"></a></span></li>
+    <li><span class="label"><a href="/index#getintouch"><img alt="Email Icon" src="{% static 'images/envelope-solid.svg' %}" width="50" height="50"></a></span></li>
+  </ul>
+</section>
+<ul class="copyright">
+  <div class="copyright" align="center">
+    <script>
+		document.write('&copy;' );
+		document.write(' 2021 - ');
+		document.write(new Date().getFullYear());
+		document.write(' mturner.me - All Rights Reserved.');
+		document.write('<br/>Last Updated : ');
+		document.write(document.lastModified);
+	</script>
+  </div>
+</ul>
+
+{% endblock %}
