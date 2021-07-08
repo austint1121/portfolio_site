@@ -1,7 +1,6 @@
 {% extends 'layout.html' %}
 {% load static %}
 <!--TODO: Rename classes/profiles-->
-<!--TODO: Figure out why title of page is 'test'-->
 <!--TODO: Change Color Scheme-->
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/users.css' %}" type="text/css" />
@@ -14,8 +13,7 @@
         <header>
            <h1 class="page-title">TOCS Enemy Database</h1>
            <div class="path">{{ path }}</div>
-            <!--TODO: This should lead back to the 'projects' page-->
-           <a href="/" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+           <a href="/index/projects" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
         </header>
 
         <div class="users-container">

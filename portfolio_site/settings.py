@@ -136,7 +136,6 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# TODO: Change 'media root' to S3
 MEDIA_ROOT = os.path.join(BASE_DIR, "tocs_database/static/images")
 
 

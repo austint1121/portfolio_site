@@ -51,11 +51,12 @@ class Enemy(models.Model):
 
     #Unbalance Efficacy
     efficacy = (
-        ('1/5', '1'),
-        ('2/5', '2'),
-        ('3/5', '3'),
-        ('4/5', '4'),
-        ('5/5', '5'),
+        ('0', '0'),
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
     )
 
     slash = models.CharField(choices=efficacy, default='1', max_length=10)
