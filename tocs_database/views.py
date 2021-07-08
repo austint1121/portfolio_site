@@ -8,8 +8,7 @@ def landing(request):
     context = {'enemy': enemy, 'location': location}
     return render(request, 'users.html', context)
 
-def enemy_profile(request, enemy_id):
-    # TODO: Change url to enemy names rather then an id
-    enemy = get_object_or_404(Enemy, id=enemy_id)
+def enemy_profile(request, enemy_name):
+    enemy = get_object_or_404(Enemy, name=enemy_name)
     context = {'enemy': enemy, 'title':f'{enemy.name} Combat profile'}
     return render(request,'profile.html', context)

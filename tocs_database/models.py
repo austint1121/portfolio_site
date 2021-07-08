@@ -9,7 +9,7 @@ class Location(models.Model):
 
 class Enemy(models.Model):
     """Model for an enemy in the game."""
-    id = models.AutoField(primary_key=True)
+    # id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, help_text='Enter enemy name/title')
     profile_pic = models.ImageField(upload_to='', null=True)
     location = models.ForeignKey('Location', on_delete=models.RESTRICT)
