@@ -53,7 +53,7 @@ label {
 
 .users-table tr:nth-child(even) {
     /*background: #f6fafd;*/
-    background: #fafdfe;
+    background: #fefafa;
 }
 
 .users-table td {
