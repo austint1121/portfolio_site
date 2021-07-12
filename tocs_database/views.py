@@ -10,5 +10,9 @@ def landing(request):
 
 def enemy_profile(request, enemy_name):
     enemy = get_object_or_404(Enemy, name=enemy_name)
-    context = {'enemy': enemy, 'title':f'{enemy.name} Combat profile'}
+    earth = int(enemy.earth_efficacy/2)
+    water = int(enemy.water_efficacy / 2)
+    fire = int(enemy.fire_efficacy / 2)
+    wind = int(enemy.wind_efficacy / 2)
+    context = {'enemy': enemy, 'title':f'{enemy.name} Combat profile', 'earth': earth, 'water': water, 'fire': fire, 'wind': wind}
     return render(request,'profile.html', context)
