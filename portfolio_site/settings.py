@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
+# TODO: Remove sensitive information and make public on github
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 dotenv_path = os.path.join(BASE_DIR, '.env')
@@ -14,9 +15,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['23.22.239.184','mturner.me', '127.0.0.1']
-
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
