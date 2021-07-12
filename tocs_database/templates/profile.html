@@ -95,9 +95,10 @@
                             {% for abilities in enemy.skills.all %}
                                 <tr>
                                     <td colspan="3" style="padding-right: 20px;">
-                                        {% if abilities.type == 'A' %}
+                                        {% if abilities.ability_type == 'Art' %}
                                             <span class="icon" title="Art Type"><img alt="Art Type Skill" src="{% static 'images/Art_skill.png' %}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: text-top;"></span>
-                                        {% elif abilities.type == 'C'%}
+                                        {% endif %}
+                                        {% if abilities.ability_type == 'Craft' %}
                                             <span class="icon" title="Craft Type"><img alt="Craft Type Skill" src="{% static 'images/Craft_skill.png' %}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: text-top;"></span>
                                         {% endif %}
                                         {{ abilities.name }}</td>
