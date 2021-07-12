@@ -34,7 +34,7 @@ class Enemy(models.Model):
     mirage_efficacy = models.IntegerField(null=True, blank=True)
 
     #skills
-    skills = models.ManyToManyField('Skill', help_text='Enemy skills')
+    skills = models.ManyToManyField('Skill', help_text='Enemy skills', blank=True)
 
     #Sepith Dropped
     earth_sepith = models.IntegerField(default=0)
@@ -100,7 +100,7 @@ class Skill(models.Model):
         ('Art', 'A'),
         ('Craft', 'C'),
     )
-    ability_type = models.CharField(choices=ability_type_choices, max_length=20)
+    ability_type = models.CharField(choices=ability_type_choices, max_length=20, blank=True)
     desc = models.TextField(max_length=100, help_text='Description of art or ability')
     def __str__(self):
         return self.name

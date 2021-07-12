@@ -97,7 +97,7 @@
                                     <td colspan="3" style="padding-right: 20px;">
                                         {% if abilities.type == 'A' %}
                                             <span class="icon" title="Art Type"><img alt="Art Type Skill" src="{% static 'images/Art_skill.png' %}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: text-top;"></span>
-                                        {% else %}
+                                        {% elif abilities.type == 'C'%}
                                             <span class="icon" title="Craft Type"><img alt="Craft Type Skill" src="{% static 'images/Craft_skill.png' %}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: text-top;"></span>
                                         {% endif %}
                                         {{ abilities.name }}</td>

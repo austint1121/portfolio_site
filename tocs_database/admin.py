@@ -33,9 +33,7 @@ class EnemyAdmin(admin.ModelAdmin):
         ('Sepith Dropped', {
             'fields':(('earth_sepith', 'water_sepith', 'fire_sepith', 'wind_sepith'), ('time_sepith', 'space_sepith', 'mirage_sepith', 'mass_sepith'))
         }),
-        ('Items', {
-            'fields':['items']
-        }),
+
         ('Unbalance Efficacy', {
             'fields': [('slash', 'thrust', 'pierce', 'strike')]
         }),
