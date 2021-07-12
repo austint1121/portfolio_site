@@ -7,7 +7,7 @@ body {
     justify-content: space-between;
     height: 100%;
     margin: 0;
-    background: #e1eaf5;
+    background: #60000017;
     font-family: proxima-nova, sans-serif;
     text-align: center;
 }
@@ -18,7 +18,7 @@ body {
 
 .page-title {
     margin: 20px 0 3px;
-    color: #5f6988;
+    color: #d96969;
     font-family: proxima-nova, sans-serif;
     font-size: 1.7em;
     line-height: 1;
