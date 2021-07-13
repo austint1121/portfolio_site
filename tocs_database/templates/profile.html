@@ -8,7 +8,6 @@
 
 {% block content %}
     <div class="viewport">
-<!--        TODO: Include a "boss" label, and add a notes section for bosses-->
     {% include 'header.html' %}
         {{ enemy.location.name }}
         <div class="container">
@@ -90,7 +89,7 @@
                 </div>
             </div>
             <div style="display: flex; margin-left:auto;margin-right:auto;">
-                <div style="flex: 50%; padding: 5px;">
+                <div style="flex: 60%; padding: 5px;">
                     <table>
                         <tbody>
                         <tr><td colspan="6" class="article-table-sub-header"><h3>Skills</h3></td></tr>
@@ -111,7 +110,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div style="flex: 50%; padding: 5px;">
+                <div style="flex: 40%; padding: 5px;">
                     <table>
                         <tbody>
                             <tr><td colspan="12" class="article-table-sub-header"><h3>Sepith Drops</h3></td></tr>
@@ -133,6 +132,20 @@
                     </table>
                 </div>
             </div>
+            {% if enemy.boss %}
+            <div style="display: flex; margin: auto;">
+                <div style="flex: 100%; padding: 5px;">
+                    <table>
+                        <tbody>
+                        <tr><td colspan="12" class="article-table-sub-header"><h3>Boss Notes</h3></td></tr>
+                            <tr>
+                                <td><p class="user-bio">{{ enemy.boss_notes }}</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% endif %}
         </div>
         <a href="/tocs" class="back-to-users" style="padding-bottom: 20px;"><i class="fas fa-arrow-left"></i> <span>Back to Database</span></a>
 
