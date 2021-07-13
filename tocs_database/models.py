@@ -8,6 +8,8 @@ class Location(models.Model):
     dates = models.DateField(help_text='Enter First Ingame date that player visits Location')
     def __str__(self):
         return self.name
+    class Meta:
+        ordering = ['dates']
 
 class Enemy(models.Model):
     """Model for an enemy in the game."""
