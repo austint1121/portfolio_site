@@ -25,6 +25,7 @@
                             <th>Name</th>
                             <th>Location</th>
                             <th>Level</th>
+                            <th>Boss</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -36,6 +37,10 @@
                             <!--TODO: Create page for location view-->
                             <td class="user-title"><span>{{ monster.location }}</span></td>
                             <td class="user-location"><span>{{ monster.level }}</span></td>
+                            <td colspan="2" style="white-space:nowrap"><span class="icon" title="Boss Icon">
+                            {% if monster.boss %}
+                                <img alt="Critical.png" src="{% static 'images/Critical.png}" decoding="async" width="25" height="25" style="margin-left: auto; margin-right: auto;vertical-align: text-top;"></span></td>
+                            {% endif %}
                         </tr>
                         {% endif %}
                         {% endfor %}

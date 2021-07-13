@@ -19,7 +19,10 @@ class ItemInline(admin.TabularInline):
 class EnemyAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
-            'fields': ('name', 'location', 'profile_pic', 'bio')
+            'fields': ['boss']
+        }),
+        (None, {
+            'fields': ('name', 'location', 'profile_pic','bio')
         }),
         ('Stats', {
             'fields': [('level', 'HP', 'EXP'), ('STR', 'DEF', 'ATS', 'ADF', 'SPD')]
@@ -39,5 +42,8 @@ class EnemyAdmin(admin.ModelAdmin):
         }),
         ('Status Efficacy', {
             'fields': (('poison_efficacy', 'burn_efficacy', 'deathblow_efficacy'), ('seal_efficacy','freeze_efficacy', 'nightmare_efficacy'), ('mute_efficacy', 'petrify_efficacy', 'at_delay_efficacy'), ('blind_efficacy', 'faint_efficacy', 'vanish_efficacy'), ('sleep_efficacy', 'confuse_efficacy','s_down_efficacy'))
-        })
+        }),
+        ('Boss Notes', {
+            'fields': ['boss_notes']
+        }),
     )
