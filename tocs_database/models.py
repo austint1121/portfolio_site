@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Location(models.Model):
     """Locations/Dungeons in game"""
+    # TODO: Add map to locations
     name = models.CharField(max_length=50, help_text='Locations with enemies')
     def __str__(self):
         return self.name
@@ -10,6 +11,8 @@ class Location(models.Model):
 class Enemy(models.Model):
     """Model for an enemy in the game."""
     # id = models.AutoField(primary_key=True)
+    boss = models.BooleanField(default=False)
+    boss_notes = models.TextField(max_length=2000, blank=True, help_text='Enter notes or advice on fight.')
     name = models.CharField(max_length=50, help_text='Enter enemy name/title')
     profile_pic = models.ImageField(upload_to='', null=True)
     location = models.ForeignKey('Location', on_delete=models.RESTRICT)
@@ -85,7 +88,7 @@ class Enemy(models.Model):
     def __str__(self):
         return self.name
 
-# TODO: Decide if item drops should be kept as a model.
+# Keeping ItemDrop as a model just in case I want to implement it later.
 class ItemDrop(models.Model):
     """Model for Item drops"""
     name = models.CharField(max_length=50, help_text='Name of item')
