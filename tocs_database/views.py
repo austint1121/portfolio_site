@@ -14,5 +14,12 @@ def enemy_profile(request, enemy_name):
     water = int(enemy.water_efficacy / 2)
     fire = int(enemy.fire_efficacy / 2)
     wind = int(enemy.wind_efficacy / 2)
-    context = {'enemy': enemy, 'title':f'{enemy.name} Combat profile', 'earth': earth, 'water': water, 'fire': fire, 'wind': wind}
+    context = {'enemy': enemy, 'title':f'{enemy.name} Combat profile', 'earth': earth, 'water': water, 'fire': fire, 'wind': wind,}
+    if enemy.time_efficacy:
+        time = int(enemy.time_efficacy / 2)
+        space = int(enemy.space_efficacy / 2)
+        mirage = int(enemy.mirage_efficacy / 2)
+        context['time'] = time
+        context['space'] = space
+        context['mirage'] = mirage
     return render(request,'profile.html', context)
