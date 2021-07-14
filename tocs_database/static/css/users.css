@@ -23,7 +23,6 @@
 tr td:first-of-type,
 tr th:first-of-type {
     min-width: unset;
-    max-width: 60px;
 }
 
 .user-form {
