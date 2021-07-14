@@ -29,11 +29,14 @@
                         </tr>
                         </thead>
                         <tbody>
-<!--                        TODO: Add spoiler text funtionality for bosses.-->
                         {% for monster in enemy %}
                         {% if places.name == monster.location.name %}
                         <tr>
-                            <td class="user-name"><a href="{{ monster.name }}"><span>{{ monster.name }}</span></a></td>
+                            {% if monster.spoiler %}
+                                <td class="user-name"><a href="{{ monster.name }}"><span class="spoiler">{{ monster.name }}</span></a></td>
+                            {% else % }
+                                <td class="user-name"><a href="{{ monster.name }}"><span>{{ monster.name }}</span></a></td>
+                            {% endif %}
                             <!--TODO: Create page for location view-->
                             <td class="user-title"><span>{{ monster.location }}</span></td>
                             <td class="user-location"><span>{{ monster.level }}</span></td>

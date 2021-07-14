@@ -15,6 +15,7 @@ class Enemy(models.Model):
     """Model for an enemy in the game."""
     # id = models.AutoField(primary_key=True)
     boss = models.BooleanField(default=False)
+    spoiler = models.BooleanField(default=False)
     boss_notes = models.TextField(max_length=2000, blank=True, help_text='Enter notes or advice on fight.')
     name = models.CharField(max_length=50, help_text='Enter enemy name/title')
     profile_pic = models.ImageField(upload_to='', null=True)

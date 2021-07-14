@@ -6,6 +6,19 @@
     overflow: hidden;
     box-shadow: 0 0 15px rgba(64, 66, 72, 0.3);
 }
+.spoiler{
+  color: black;
+  background-color:black;
+  transition-property: background-color, color;
+  transition-duration: 0.2s;
+}
+
+.spoiler:hover{
+  background-color: #ffffff00;
+  color: #b75e5e;
+
+  }
+
 
 tr td:first-of-type,
 tr th:first-of-type {
