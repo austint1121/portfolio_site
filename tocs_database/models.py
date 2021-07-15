@@ -6,6 +6,7 @@ class Location(models.Model):
     # TODO: Add map to locations
     name = models.CharField(max_length=50, help_text='Locations with enemies')
     dates = models.DateField(help_text='Enter First Ingame date that player visits Location')
+    high_elements = models.BooleanField(default=False)
     def __str__(self):
         return self.name
     class Meta:

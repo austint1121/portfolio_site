@@ -9,6 +9,7 @@
 
 {% block content %}
     <div class="viewport">
+<!--        TODO: Add padding to bottom? -->
         <header>
            <h1 class="page-title">TOCS Enemy Database</h1>
            <div class="path">{{ path }}</div>
@@ -17,7 +18,11 @@
 
         <div class="users-container">
             {% for places in location %}
-                <button type="button" class="collapsible">{{ places.name }}</button>
+                <button type="button" class="collapsible">{{ places.name }}
+                {% if places.high_elements %}
+                    <img alt="High Elements" src="{% static 'images/High_Elements.png' %}" decoding="async" width="25" height="25" style="margin-left: 95%;margin-top: -2.5%; vertical-align: text-top;">
+                {% endif %}
+                </button>
                 <div class="content">
                     <table class="users-table">
                         <thead>
@@ -38,6 +43,7 @@
                             <td class="user-name"><a href="{{ monster.name }}"><span>{{ monster.name }}</span></a></td>
                             {% endif %}
                             <!--TODO: Create page for location view-->
+<!--                            TODO: Decide if something other then monster location should go here.-->
                             <td class="user-title"><span>{{ monster.location }}</span></td>
                             <td class="user-location"><span>{{ monster.level }}</span></td>
                             <td colspan="2" style="white-space:nowrap"><span class="icon" title="Boss Icon">
