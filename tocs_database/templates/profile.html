@@ -8,8 +8,12 @@
 
 {% block content %}
     <div class="viewport">
-    {% include 'header.html' %}
-        {{ enemy.location.name }}
+   <header>
+       <h1 class="page-title">{{ title }}</h1>
+       <div class="path">{{ path }}</div>
+       <a href="/tocs/{{ location_name }}" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+   </header>
+        <a href="/tocs/{{ location_name }}">{{ enemy.location.name }}</a>
         <div class="container">
             <div class="account-header">
                 <img class="user-avatar" style="height: 150px; width: 150px;" src="https://mturner-static.s3.amazonaws.com/static/images{{enemy.profile_pic.url}}" alt="profile">
@@ -159,7 +163,7 @@
             </div>
             {% endif %}
         </div>
-        <a href="/tocs" class="back-to-users" style="padding-bottom: 20px;"><i class="fas fa-arrow-left"></i> <span>Back to Database</span></a>
+        <a href="/tocs/{{ location_name }}" class="back-to-users" style="padding-bottom: 20px;"><i class="fas fa-arrow-left"></i> <span>Back to {{ location_name }}</span></a>
 
     </div>
 {% endblock %}

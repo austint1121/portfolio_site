@@ -4,7 +4,7 @@ from django.db import models
 class Location(models.Model):
     """Locations/Dungeons in game"""
     # TODO: Add map to locations
-    name = models.CharField(max_length=50, help_text='Locations with enemies')
+    name = models.CharField(max_length=50, help_text='Locations with enemies', unique=True)
     dates = models.DateField(help_text='Enter First Ingame date that player visits Location')
     high_elements = models.BooleanField(default=False)
     def __str__(self):

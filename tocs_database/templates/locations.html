@@ -10,40 +10,29 @@
 {% block content %}
     <div class="viewport">
         <header>
-           <h1 class="page-title">TOCS Enemy Database</h1>
+           <h1 class="page-title"> {{ location.name }} </h1>
            <div class="path">{{ path }}</div>
-           <a href="/index/projects" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+           <a href="/tocs/" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
         </header>
-
+        <a href="/tocs/">TOCS Enemy Database</a>
         <div class="users-container">
-            {% for places in location %}
-                <button type="button" class="collapsible">{{ places.name }}
-                {% if places.high_elements %}
-                    <img alt="High Elements" src="{% static 'images/High_Elements.png' %}" decoding="async" width="25" height="25" style="margin-left: 95%;margin-top: -2.5%; vertical-align: text-top;">
-                {% endif %}
-                </button>
-                <div class="content">
                     <table class="users-table">
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Location</th>
                             <th>Level</th>
                             <th>Boss</th>
                         </tr>
                         </thead>
                         <tbody>
                         {% for monster in enemy %}
-                        {% if places.name == monster.location.name %}
+                        {% if location.name == monster.location.name %}
                         <tr>
                             {% if monster.spoiler %}
-                            <td class="user-name"><a href="{{ monster.location.name }}/{{ monster.name }}"><span class="spoiler">{{ monster.name }}</span></a></td>
+                            <td class="user-name"><a href="/tocs/{{ monster.location.name }}/{{ monster.name }}"><span class="spoiler">{{ monster.name }}</span></a></td>
                             {% else %}
-                            <td class="user-name"><a href="{{ monster.location.name }}/{{ monster.name }}"><span>{{ monster.name }}</span></a></td>
+                            <td class="user-name"><a href="/tocs/{{ monster.location.name }}/{{ monster.name }}"><span>{{ monster.name }}</span></a></td>
                             {% endif %}
-                            <!--TODO: Create page for location view-->
-<!--                            TODO: Decide if something other then monster location should go here.-->
-                            <td class="user-title"><a href="{{ monster.location }}"><span>{{ monster.location }}</span></a></td>
                             <td class="user-location"><span>{{ monster.level }}</span></td>
                             <td colspan="2" style="white-space:nowrap"><span class="icon" title="Boss Icon">
                             {% if monster.boss %}
@@ -54,27 +43,10 @@
                         {% endfor %}
                         </tbody>
                     </table>
-                </div>
-            {% endfor %}
         </div>
         <p>
         <a href="/index" class="back-to-users" style="padding-bottom: 20px;"><i class="fas fa-arrow-left"></i> <span>Back to Site</span></a>
         </p>
     </div>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
-}
-</script>
 {% endblock %}
