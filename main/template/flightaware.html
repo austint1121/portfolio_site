@@ -1,0 +1,12 @@
+{% extends "generic.html" %}
+
+{% block content %}
+{% load static %}
+<h1>FlightAware Project</h1>
+<img style="padding: 10px; margin-left: 24%;" width="600" height="244" src=" {% static 'images/1200px-FlightAware_logo.svg.png' %} " alt="" />
+<p>In June of 2019 I took a job working at Regeneron Pharmaceutical’s Global Security Operations Command Center as a Security Analyst. For 2 years while working there I had been teaching myself the coding language “Python”. I wrote basic scripts that automated some of my repetitive responsibilities, and this opened up time for me to work on more important projects and responsibilities. One of these projects ended up being a script that I had a chance to pitch to the Director and manager of Security.</p>
+<img style="padding: 10px; float: right;"  width="375" height="402" src=" {% static 'images/flightawaremap.jpg' %} " alt="" />
+<p> <a href="https://flightaware.com/"> FlightAware</a> is a web-based flight tracking software. With a free account, you can input up to 5 flight numbers, unlimited numbers with a paid account, and have those flights displayed on a map in real-time for the purpose of tracking them. My partner at the time, Kevin Meade, and I had the idea to use this software to track all Regeneron related travelers. However, we quickly ran into an issue: there was no way to mass input flight numbers, and Regeneron had hundreds of different travelers each day.</p>
+<p>I was able to use the Python I had learned to devise a solution; I would write a script that would take all the flight numbers from an excel sheet and input them into FlightAware for us. After about a month of work, my partner and I had a working prototype to show to the director and manager. The only thing that would be needed was a premium account, so that we wouldn’t be limited to 5 flights. We showed them the prototype, and they were impressed enough to approve the project, and the funding for a premium account. The script was used for approximately 3 months, until the FlightAware account was suspended due to the emergence of COVID-19; all company travel was halted due to the virus, so there were no flights to be tracked.</p>
+<p>While the script itself does not get used anymore, I wanted to archive its story on my website. This was my first real Python project, and the first time that I created something that was used in a professional setting. The code for the project can be found <a href="https://github.com/austint1121/FlightAware-Auto-Input"> here on Github</a></p>
+{% endblock %}

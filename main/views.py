@@ -73,3 +73,14 @@ def projects(request):
         'form':form
     }
     return render(request, 'projects.html', context)
+
+def flightaware(request):
+    """View for the FlightAware Project page."""
+    if request.method =='POST':
+        emailform(request)
+        return redirect('/index/success/')
+    form = ContactForm()
+    context = {
+        'form':form
+    }
+    return render(request, 'flightaware.html', context)
