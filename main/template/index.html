@@ -78,13 +78,73 @@
 							<header>
 								{% block header %}
 								<h1>Welcome to Matthew Turner's Portfolio.</h1><br />
-								<h3>Articles and Projects</h3>
-								<p>All projects and articles below were made by <a href="about_me">me</a> or a team I was on.</p>
+								<h3>Recent Projects</h3>
+								<p>All projects below were created by <a href="about_me">me</a> and can be found on my <a href="https://github.com/austint1121">Github</a> </p>
 								{% endblock %}
 							</header>
-							<section class="tiles">
+							<section class="tiles" style="justify-content: center;">
 								{% block titles %}
+								<article class="style7">
+									<span class="image">
+										<img width="353" height="330" src="https://raw.githubusercontent.com/austint1121/Undiagnosed-ADHD-Identification/main/Images/title_card.jpg" alt="" />
+									</span>
+									<a href="https://github.com/austint1121/Undiagnosed-ADHD-Identification">
+										<h2>Identifying Undiagnosed ADHD with Machine Learning</h2>
+										<div class="content">
+											<p></p>
+										</div>
+									</a>
+								</article>
+								<article class="style5">
+									<span class="image">
+										<img width="353" height="330" src="https://raw.githubusercontent.com/austint1121/OES-PneumoniaClassification/main/Images/banner_Image.jpg" alt="" />
+									</span>
+									<a href="https://github.com/austint1121/OES-PneumoniaClassification">
+										<h2>Diagnostic Imaging Pneumonia Classification</h2>
+										<div class="content">
+											<p></p>
+										</div>
+									</a>
+								</article>
+								<article class="style8">
+									<span class="image">
+										<img width="353" height="330" src="https://raw.githubusercontent.com/austint1121/Flatiron_GOATS_Vaccination_Prediction/main/Images/goat-vaccination.jpg" alt="" />
+									</span>
+									<a href="https://github.com/austint1121/Flatiron_GOATS_Vaccination_Prediction">
+										<h2>US Vaccination Status Prediction</h2>
+										<div class="content">
+											<p></p>
+										</div>
+									</a>
+								</article>
 
+								<article class="style3">
+									<span class="image">
+										<img width="353" height="330" src=" {% static 'images/KingCounty.png' %} " alt="" />
+									</span>
+									<a href="https://github.com/Jyve00/King_County_Housing">
+										<h2>King's County Housing Prices Project</h2>
+										<div class="content">
+											<p></p>
+										</div>
+									</a>
+								</article>
+								<article class="style5">
+									<span class="image">
+										<img width="353" height="330" src=" {% static 'images/VenusM.jpg' %} " alt="" />
+									</span>
+									<a href="https://github.com/austint1121/VenusMovieAnalysis">
+										<h2>Venus Analytics Movie Trends Project</h2>
+										<div class="content">
+											<p></p>
+										</div>
+									</a>
+								</article>
+							</section>
+
+							<br><br><h2>Articles and Blog posts</h2>
+							<p>All blog posts and articles below were written by <a href="about_me">me</a> and published on <a href="https://matthewturner-irl.medium.com/">Medium.com</a></p>
+							<section class="tiles" style="justify-content: center;">
 								<article class="style3">
 									<span class="image">
 										<img width="353" height="330" src=" {% static 'images/JapaneseBakeryWebSize.jpg' %} " alt="" />
@@ -107,23 +167,12 @@
 										</div>
 									</a>
 								</article>
-								<article class="style5">
+								<article class="style1">
 									<span class="image">
-										<img width="353" height="330" src=" {% static 'images/VenusM.jpg' %} " alt="" />
+										<img width="353" height="330" src="https://miro.medium.com/max/1112/1*sbPKtlpzCnF-3T1gi7U2Xw.jpeg" alt="" />
 									</span>
-									<a href="https://github.com/austint1121/VenusMovieAnalysis">
-										<h2>Venus Analytics Movie Trends Project</h2>
-										<div class="content">
-											<p></p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img width="353" height="330" src=" {% static 'images/KingCounty.png' %} " alt="" />
-									</span>
-									<a href="https://github.com/Jyve00/King_County_Housing">
-										<h2>King's County Housing Prices Project</h2>
+									<a href="https://matthewturner-irl.medium.com/customized-object-detection-using-tensorflow-14dd9fa6dfb6?source=friends_link&sk=24a83420d36accd197fcef4a91776e14">
+										<h2>Customized Object Detection Tutorial with Tensorflow</h2>
 										<div class="content">
 											<p></p>
 										</div>
@@ -131,24 +180,20 @@
 								</article>
 								<article class="style2">
 									<span class="image">
-										<img width="353" height="330" src=" {% static 'images/pic02_flightaware.jpg' %} " alt="" />
+										<img width="353" height="330" src="https://miro.medium.com/max/552/0*2FvIw6stA7MxOvZ_" alt="" />
 									</span>
-									<a href="/index/projects/flightaware">
-										<h2>FlightAware Input Script</h2>
+									<a href="https://matthewturner-irl.medium.com/an-introduction-to-adversarial-attacks-16395579c9f6">
+										<h2>Introduction to Adversarial Attacks on Neural Networks</h2>
 										<div class="content">
 											<p></p>
 										</div>
 									</a>
 								</article>
-								<article class="style1">
-									<span class="image">
-										<img width="353" height="330" src=" {% static 'images/cs1.jpg' %} " alt="" />
-									</span>
-									<a href="/tocs">
-										<h2>Trails of Cold Steel Enemy Database</h2>
-									</a>
-								</article>
 							</section>
+							{% endblock %}
+
+							{% block retired %}
+
 							{% endblock %}
 						</div>
 					</div>
