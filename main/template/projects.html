@@ -6,73 +6,29 @@
 
 <h3>Completed/Previous Projects:</h3>
 {% endblock %}
-
-{% block titles %}
 {% load static %}
-<section class="tiles">
 
-								<article class="style3">
-									<span class="image">
-										<img width="353" height="330" src=" {% static 'images/JapaneseBakeryWebSize.jpg' %} " alt="" />
-									</span>
-									<a href="https://matthewturner-irl.medium.com/bakeryscan-and-cyto-aiscan-52475b3cb779?source=friends_link&sk=a213fed9e8cbcd490feb4626dfe6e195">
-										<h2>BakeryScan and Cyto-AiSCAN Article</h2>
-										<div class="content">
-											<p></p>
-										</div>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img width="353" height="330" src=" {% static 'images/blog2emojiWebSize.jpg' %} " alt="" />
-									</span>
-									<a href="https://matthewturner-irl.medium.com/navigating-htm-hell-with-selenium-5cb1b4c2e2a7?source=friends_link&sk=0d9fd7f63ce1489b485f02d10e5d862c">
-										<h2>Selenium Webdriver Article</h2>
-										<div class="content">
-											<p></p>
-										</div>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img width="353" height="330" src=" {% static 'images/VenusM.jpg' %} " alt="" />
-									</span>
-									<a href="https://github.com/austint1121/VenusMovieAnalysis">
-										<h2>Venus Analytics Movie Trends Project</h2>
-										<div class="content">
-											<p></p>
-										</div>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img width="353" height="330" src=" {% static 'images/KingCounty.png' %} " alt="" />
-									</span>
-									<a href="https://github.com/Jyve00/King_County_Housing">
-										<h2>King's County Housing Prices Project</h2>
-										<div class="content">
-											<p></p>
-										</div>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img width="353" height="330" src=" {% static 'images/pic02_flightaware.jpg' %} " alt="" />
-									</span>
-									<a href="/index/projects/flightaware">
-										<h2>FlightAware Input Script</h2>
-										<div class="content">
-											<p></p>
-										</div>
-									</a>
-								</article>
-								<article class="style1">
-									<span class="image">
-										<img width="353" height="330" src=" {% static 'images/cs1.jpg' %} " alt="" />
-									</span>
-									<a href="/tocs">
-										<h2>Trails of Cold Steel Enemy Database</h2>
-									</a>
-								</article>
-							</section>
+{% block retired %}
+<h3>Retired Projects</h3>
+<section class="tiles" style="justify-content: center;">
+	<article class="style2">
+		<span class="image">
+			<img width="353" height="330" src=" {% static 'images/pic02_flightaware.jpg' %} " alt="" />
+		</span>
+		<a href="/index/projects/flightaware">
+			<h2>FlightAware Input Script</h2>
+			<div class="content">
+				<p></p>
+			</div>
+		</a>
+	</article>
+	<article class="style1">
+		<span class="image">
+			<img width="353" height="330" src=" {% static 'images/cs1.jpg' %} " alt="" />
+		</span>
+		<a href="/tocs">
+			<h2>Trails of Cold Steel Enemy Database</h2>
+		</a>
+	</article>
+</section>
 {% endblock %}
