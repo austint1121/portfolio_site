@@ -78,13 +78,12 @@
 							<header>
 								{% block header %}
 								<h1>Welcome to Matthew Turner's Portfolio.</h1><br />
-								<h3>Articles and Projects</h3>
+								<h3>Projects</h3>
 								<p>All projects and articles below were created by <a href="about_me">me</a></p>
 								{% endblock %}
 							</header>
 							<section class="tiles">
 								{% block titles %}
-
 								<article class="style3">
 									<span class="image">
 										<img width="353" height="330" src=" {% static 'images/JapaneseBakeryWebSize.jpg' %} " alt="" />
@@ -147,6 +146,18 @@
 									<a href="/tocs">
 										<h2>Trails of Cold Steel Enemy Database</h2>
 									</a>
+								</article>
+							</section>
+							<br><br><h2>Articles and Blog posts</h2>
+							<p>All blog posts and articles below were written by <a href="about_me">me</a> and published on <a href="https://matthewturner-irl.medium.com/">Medium.com</a></p>
+							<section class="tiles">
+								<article class="style1">
+										<span class="image">
+											<img width="353" height="330" src=" {% static 'images/cs1.jpg' %} " alt="" />
+										</span>
+										<a href="/tocs">
+											<h2>Trails of Cold Steel Enemy Database</h2>
+										</a>
 								</article>
 							</section>
 							{% endblock %}
